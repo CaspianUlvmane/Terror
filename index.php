@@ -24,12 +24,18 @@ $selected = json_decode($json, true);
 </head>
 <body>
     <div id="wrapper">
-        <div id="current"></div>
+        
+        <div id="current">
+            <p>Current Users</p>
+            <div><?php foreach($selected as $select){echo $select["name"];}?></div>
+        </div>
         <div id="addNew">Add someone to terrorise 
             <input type="text" placeholder="Name">
             <button id="add">Add</button>
         </div>
         <div id="render"><button id="getNew">Terror</button><div id="terrorise"></div></div>
     </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
