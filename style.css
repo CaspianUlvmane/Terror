@@ -1,0 +1,33 @@
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5rem;
+    height: 100vh;
+}
+
+#current{
+    background-color: whitesmoke;
+    min-height: 10vh;
+    min-width: 40vh;
+}
+
+#render{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#getNew{
+    max-width: 10vh;
+}
+
+#terrorise{
+    background-color: whitesmoke;
+    min-height: 10vh;
+    min-width: 40vh;
+    border: 1px solid gray;
+}
