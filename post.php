@@ -12,5 +12,6 @@ echo $name;
 $json = file_get_contents($filename);
 $selected = json_decode($json, true);
 
+sendJson("bro das good")
 
 ?>
