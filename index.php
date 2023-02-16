@@ -24,7 +24,7 @@ $selected = json_decode($json, true);
 </head>
 <body>
     <div id="wrapper">
-        
+        <h1>Terror</h1>
         <div id="current">
             <p>Current Users</p>
             <div><?php foreach($selected as $select){echo $select["name"];}?></div>

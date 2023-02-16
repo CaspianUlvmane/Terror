@@ -5,11 +5,11 @@ function addUser (){
 
     let options = {
         method: 'POST',
-        headers: "Content-Type: application/json",
+        header: "Content-Type: application/json",
         body: {name}
     } 
 
-    fetch("./post.php", options)
+    fetch("post.php", options)
     .then(r => {
         if (r.ok){
            return r.json
