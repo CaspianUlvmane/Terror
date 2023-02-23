@@ -3,7 +3,7 @@ require_once "./functions.php";
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if ($requestMethod != "POST"){
+if ($requestMethod != "DELETE"){
     $error = ["Error" => "Invalid request method", "method" => $requestMethod];
     
     sendJson($error, 400);
@@ -18,19 +18,13 @@ $json = file_get_contents($filename);
 $selected = json_decode($json, true);
 $name = $receivedData["name"];
 
-foreach($selected as $person){
+foreach($selected as $index => $person){
     if ($person["name"] == $name){
-        $error = ["Error" => "The name $name already exists! Write a different name!"];
-        sendJson($error, 400);
+        array_splice($selected, $index, 1);
+        $json = json_encode($selected, JSON_PRETTY_PRINT);
+        file_put_contents($filename, $json);
+        sendJson($selected);
     }
 }
-
-$user = ["name" => $name, "picked" => "0"];
-
-$selected[] = $user;
-$json = json_encode($selected, JSON_PRETTY_PRINT);
-
-file_put_contents($filename, $json);
-sendJson($selected);
 
 ?>
