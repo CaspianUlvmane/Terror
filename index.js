@@ -1,3 +1,6 @@
+document.getElementById("getNew").addEventListener("click", terrorise)
+document.getElementById("add").addEventListener("click", addUser);
+
 function renderUsers(array){
     let container = document.querySelector("#users");
     container.textContent = "";
@@ -24,7 +27,7 @@ function startUp(){
     .then((r) => renderUsers(r))
 }
 
-document.getElementById("add").addEventListener("click", addUser);
+
 
 function addUser() {
   const errorDiv = document.getElementById("error");
@@ -65,6 +68,22 @@ function deletePerson(div) {
       .then((r) =>{
         renderUsers(r)
       })
+}
+
+async function terrorise(){
+  let resource = await (await fetch("get.php?users").then(r => r.json()))
+  let numbPeople = resource.length
+  console.log(numbPeople);
+  let nameArray = []
+  resource.forEach(e =>{
+    for(let i = 0; i < e.notPicked; i++){
+      nameArray.push(e.name)
+    }
+
+  })
+  let random = Math.floor(Math.random() * nameArray.length)
+  fetch("patch.php")
+  document.getElementById("terrorise").textContent = nameArray[random]
 }
 
 startUp()

@@ -25,7 +25,7 @@ foreach($selected as $person){
     }
 }
 
-$user = ["name" => $name, "picked" => "0"];
+$user = ["name" => $name, "notPicked" => "1"];
 
 $selected[] = $user;
 $json = json_encode($selected, JSON_PRETTY_PRINT);

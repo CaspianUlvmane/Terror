@@ -35,7 +35,7 @@ $selected = json_decode($json, true);
             <input type="text" placeholder="Name">
             <button id="add">Add</button>
         </div>
-        <div id="render"><button id="getNew">Terror</button><div id="terrorise"></div></div>
+        <div id="render"><button id="getNew">Terrorise</button><div id="terrorise"></div></div>
     </div>
 
     <script src="index.js"></script>
