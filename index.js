@@ -81,9 +81,31 @@ async function terrorise(){
     }
 
   })
+  console.log(nameArray);
   let random = Math.floor(Math.random() * nameArray.length)
-  fetch("patch.php")
-  document.getElementById("terrorise").textContent = nameArray[random]
+  let name = nameArray[random]
+  let options = {
+    method: "PATCH",
+    header: "Content-Type: application/json",
+    body: JSON.stringify({ name }),
+  };
+
+  fetch("patch.php", options)
+  .then(r => {
+    if (r.ok){
+      return r.json()
+    } else {
+      return 1
+    }
+  })
+  .then(r => {
+    if (r == 1){
+      document.getElementById("error").textContent = "Problem with terrorisation, try again!"
+    } else{
+
+      document.getElementById("terrorise").textContent = nameArray[random]
+    }
+  })
 }
 
 startUp()
