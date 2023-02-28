@@ -1,14 +1,18 @@
 [
     {
-        "name": "Venus",
-        "notPicked": 1
-    },
-    {
         "name": "Mars",
         "notPicked": 1
     },
     {
-        "name": "Jupiter",
-        "notPicked": 1
+        "name": "Caspian",
+        "notPicked": 4
+    },
+    {
+        "name": "Rat",
+        "notPicked": 3
+    },
+    {
+        "name": "Bun",
+        "notPicked": 2
     }
 ]

@@ -20,6 +20,8 @@ $name = $receivedData["name"];
 
 foreach($selected as $index => $person){
     if ($person["name"] == $name){
+        $person["notPicked"] = 1;
+        $selected[$index] = $person;
         continue;
     }
     $person["notPicked"]++;

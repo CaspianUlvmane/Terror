@@ -72,8 +72,6 @@ function deletePerson(div) {
 
 async function terrorise(){
   let resource = await (await fetch("get.php?users").then(r => r.json()))
-  let numbPeople = resource.length
-  console.log(numbPeople);
   let nameArray = []
   resource.forEach(e =>{
     for(let i = 0; i < e.notPicked; i++){
