@@ -53,4 +53,8 @@ body{
     min-height: 10vh;
     min-width: 40vh;
     border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
 }
