@@ -1,10 +1,11 @@
 <?php
-function sendJson ($message, $status = 200){
+function sendJson ($data, $status = 200){
+    header("Content-Type: application/json");
 
-    $error = ["message" => $message, "status" => $status ]; 
-    $json = json_encode($error);
+    http_response_code($status);
+    $json = json_encode($data);
 
     echo $json;
-    exit;
+    exit();
 }
 ?>

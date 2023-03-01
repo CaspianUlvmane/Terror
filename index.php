@@ -20,6 +20,7 @@ $selected = json_decode($json, true);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Terror App</title>
 </head>
 <body>
@@ -27,13 +28,14 @@ $selected = json_decode($json, true);
         <h1>Terror</h1>
         <div id="current">
             <p>Current Users</p>
-            <div><?php foreach($selected as $select){echo $select["name"];}?></div>
+            <div id="users"></div>
+            <div id="error"></div>
         </div>
         <div id="addNew">Add someone to terrorise 
             <input type="text" placeholder="Name">
             <button id="add">Add</button>
         </div>
-        <div id="render"><button id="getNew">Terror</button><div id="terrorise"></div></div>
+        <div id="render"><button id="getNew">Terrorise</button><div id="terrorise"></div></div>
     </div>
 
     <script src="index.js"></script>
