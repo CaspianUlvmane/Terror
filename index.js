@@ -72,14 +72,21 @@ function deletePerson(div) {
 
 async function terrorise(){
   let resource = await (await fetch("get.php?users").then(r => r.json()))
+  let orderedArray = resource.sort((a,b) => a.Picked - b.Picked)
   let nameArray = []
-  resource.forEach(e =>{
-    for(let i = 0; i < e.notPicked; i++){
-      nameArray.push(e.name)
-    }
+  let largestValue = orderedArray[orderedArray.length - 1].Picked
 
+  console.log(orderedArray);
+
+  resource.forEach(e =>{
+    let odds = largestValue - e.Picked
+    for(i = 0; i <= odds; i++){  
+      nameArray.push(e.name)
+  }
   })
+
   console.log(nameArray);
+  
   let random = Math.floor(Math.random() * nameArray.length)
   let name = nameArray[random]
   let options = {

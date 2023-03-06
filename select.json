@@ -1,18 +1,3 @@
 [
-    {
-        "name": "Mars",
-        "notPicked": 2
-    },
-    {
-        "name": "Caspian",
-        "notPicked": 1
-    },
-    {
-        "name": "Rat",
-        "notPicked": 0
-    },
-    {
-        "name": "Bun",
-        "notPicked": 3
-    }
+
 ]
